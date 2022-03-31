@@ -1,0 +1,34 @@
+.card {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px 40px;
+    border-radius: 20px;
+    background-color: rgb(176, 147, 204);
+  }
+  
+  .card-text {
+    font-size: 20px;
+  }
+  body {
+    font-family: sans-serif;
+  }
+  .col-4 {
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+  
+  .list-group-item {
+    background-color: rgb(233, 225, 241);
+  }
+  
+  
+  #current-location 
+  {
+    background: #0b4c5f;
+    border: 1px solid white;
+    font-size: 13px;
+    position: relative;
+    left: 300px;
+    bottom: 175px;
+  }
