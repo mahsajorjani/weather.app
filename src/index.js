@@ -50,9 +50,14 @@ currenetdateTime.innerHTML = formatDate(currentTime);
 
 //week 5
 function showTemperature(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = `${temperature}°c`;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = responce.data.main.humidity;
+  let windElement = documnet.querySelector("#wind");
+  wind.innerHTML = Math.round(responce.data.wind.speed);
 }
 
 function search(event) {
@@ -62,9 +67,9 @@ function search(event) {
   cityElement.innerHTML = cityInput.value;
   let city = cityInput.value;
   let apiKey = "2f5257f6af18ca282242813ab999e7f4";
-  //let city = "Gorgan";
+
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  //axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  
   axios.get(apiUrl).then(showTemperature);
 }
 let searchForm = document.querySelector("#search-form");
