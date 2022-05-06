@@ -50,7 +50,7 @@ currenetdateTime.innerHTML = formatDate(currentTime);
 
 //week 5
 function showTemperature(response) {
-  console.log(response.data);
+  console.log(response.data.main.temp);
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = `${temperature}°c`;
@@ -59,6 +59,13 @@ function showTemperature(response) {
   let windElement = documnet.querySelector("#wind");
   wind.innerHTML = Math.round(responce.data.wind.speed);
 }
+let apiKey = "2f5257f6af18ca282242813ab999e7f4";
+
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+axios.get(apiUrl).then(showTemperature);
+
+
 
 function search(event) {
   event.preventDefault();
