@@ -50,21 +50,27 @@ currenetdateTime.innerHTML = formatDate(currentTime);
 
 //week 5
 function showTemperature(response) {
-  console.log(response.data.main.temp);
+ 
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = `${temperature}°c`;
+  let cityElement = document.querySelector("#city");
+  let cityInput = document.querySelector("#city-input");
+  cityElement.innerHTML = cityInput.value;
+  let city = cityInput.value;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.main.description;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = responce.data.main.humidity;
+  humidityElement.innerHTML = response.data.main.humidity;
   let windElement = documnet.querySelector("#wind");
-  wind.innerHTML = Math.round(responce.data.wind.speed);
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
 let apiKey = "2f5257f6af18ca282242813ab999e7f4";
 
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
-
+//console.log(response.data);
 
 
 function search(event) {
