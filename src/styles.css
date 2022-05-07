@@ -32,3 +32,16 @@
     left: 300px;
     bottom: 175px;
   }
+  ul{
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+.opens{
+  display: inline;
+  margin: auto;
+  font-size: 16px;
+
+
+}
+

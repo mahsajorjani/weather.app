@@ -51,26 +51,53 @@ currenetdateTime.innerHTML = formatDate(currentTime);
 //week 5
 function showTemperature(response) {
  
-  let temperature = Math.round(response.data.main.temp);
+ 
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temperature}°c`;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
   let cityInput = document.querySelector("#city-input");
   cityElement.innerHTML = cityInput.value;
   let city = cityInput.value;
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.main.description;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
   let windElement = documnet.querySelector("#wind");
-  wind.innerHTML = Math.round(response.data.wind.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let iconElement = documnet.querySelector("#icon");
+  iconElement.setAttribute("src" ,`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt" ,response.data.weather[0].description);
+ celsiusTemperature = response.data.main.temp;
 }
+
+
 let apiKey = "2f5257f6af18ca282242813ab999e7f4";
 
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
 //console.log(response.data);
+function displayfahrenhietTemperature(events){
+  events.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenhietTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenhietTemperature);
+  
+}
+
+
+function displaycelsiusTemperature(events){
+  events.preventDefault();
+  //let celsiusTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  
+}
+  let fahrenhietlink = document.querySelector("#fahrenheit-link");
+fahrenhietlink.addEventListener("click",displayfahrenhietTemperature);
+
+let celsiuslink = document.querySelector("#celsius-link");
+celsiuslink.addEventListener("click",displaycelsiusTemperature);
 
 
 function search(event) {

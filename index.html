@@ -34,26 +34,34 @@
 
         </h2>
         <p class="card-text" id="day">Wednesday 22:00</p>
-        <p class="weather-text" id="description">Sunny</p>
+        <p class="weather-text" id="description"> Sunny</p>
       </div>
-        <div id="temperature">
-      <p>
-        <strong>☀️ 22 °C | °F </strong>
-      </p>
-      </div>
+    
       <div class="row">
           <div class="col-6">
+            <div class = "clear weather-temp">
+              <img src=""
+              alt="clear"
+              id="icon"
+              class="float-left"
+          />
+          <div class="float-left">
+                      <strong id="temperature"></strong>
+                  <span class="units">
+                    <a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link"> °F </a></span>
+                  </div>
+                    </div>
             <ul>
+
               <li>
                 Humidity: <span id="humidity"></span>%</li>
               <li>
-                Wind: <span id="wind"></span> km/h
-              </li>
+                Wind: <span id="wind"></span> km/h</li>
             </ul>
            
           </div>
     </div>
-    <span>
+    <span class="opens">
         <a href = "https://github.com/mahsajorjani/weather.app">
             open-source code
         </a>
