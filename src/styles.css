@@ -3,10 +3,14 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px 40px;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: rgb(176, 147, 204);
+    padding: 20px;
+    border: 1px solid #dadde1;
+ 
   }
-  
+
+ 
   .card-text {
     font-size: 20px;
   }
@@ -37,16 +41,19 @@
     font-weight: bold;
     font-size: 16px;
     margin: 0;
-    padding 0;
+    padding: 0;
   }
   li{
     list-style-type: none;
     margin: 0;
   }
 .opens{
-  display: inline;
-  margin: auto;
-  font-size: 16px;
+ padding: 40px;
+ margin: 30px auto;
+ position: relative;
+ left: 170px;
+
+ 
 }
 .weather-temp img{
   margin-right: 5px;
@@ -63,6 +70,8 @@
   position: relative;
   font-size: 16px;
   top: -34px;
+  left: 34px;
+ 
 
 }
 .weather-temp .active{
@@ -72,4 +81,3 @@
 .weather-temp .active:hover{
   text-decoration: none;
 }
-
