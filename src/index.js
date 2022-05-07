@@ -76,19 +76,23 @@ let apiKey = "2f5257f6af18ca282242813ab999e7f4";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
-//console.log(response.data);
-function displayfahrenhietTemperature(events){
-  events.preventDefault();
+
+
+function displayfahrenhietTemperature(event){
+  event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiuslink.classList.remove("active");
+  fahrenhietlink.classList.add("active");
   let fahrenhietTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenhietTemperature);
   
 }
 
 
-function displaycelsiusTemperature(events){
-  events.preventDefault();
-  //let celsiusTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+function displaycelsiusTemperature(event){
+  event.preventDefault();
+  celsiuslink.classList.add("active");
+  fahrenhietlink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   
