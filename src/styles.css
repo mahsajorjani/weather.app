@@ -33,9 +33,15 @@
     bottom: 175px;
   }
   ul{
-    list-style-type: none;
+   
     font-weight: bold;
     font-size: 16px;
+    margin: 0;
+    padding 0;
+  }
+  li{
+    list-style-type: none;
+    margin: 0;
   }
 .opens{
   display: inline;
