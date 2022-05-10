@@ -1,5 +1,5 @@
 // coded by mahsa jorjani from iran
-//challenge1
+
 
 let currentTime = new Date();
 function formatDate(date) {
@@ -48,9 +48,34 @@ function formatDate(date) {
 let currenetdateTime = document.querySelector("#day");
 currenetdateTime.innerHTML = formatDate(currentTime);
 
-//week 5
+
+function displayForecast(){
+let forecastElement = document.querySelector("#forecast");
+let days = ["Wed" , "Thr" , "Fri" , "Sat"];
+let forecastHTML = `<div class=" row">`;
+days.forEach(function(date){
+
+      forecastHTML = forecastHTML +
+`
+        <div class="col-2">
+          <div class="weather-forecast-date">
+        ${date}
+          </div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt=""
+          width="45"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperatures-max">18 °</span>
+          <span class="weather-forecast-temperatures-min">12 °</span> 
+        </div>
+      </div>`;
+});
+forecastHTML = forecastHTML+ `</div>`;
+forecastElement.innerHTML = forecastHTML;
+
+}
 function showTemperature(response) {
- 
  
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -121,3 +146,6 @@ function search(event) {
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
+
+displayForecast();
+ 
