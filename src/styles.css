@@ -15,6 +15,7 @@
     font-size: 20px;
   }
   body {
+    
     font-family: sans-serif;
   }
   .col-4 {
@@ -48,9 +49,9 @@
     margin: 0;
   }
 .opens{
- padding: 40px;
- margin: 30px auto;
- position: relative;
+ text-align: center;
+ margin: 0;
+ position: fixed;
  left: 170px;
 
  
@@ -75,6 +76,7 @@
 
 }
 .weather-temp .active{
+
   color: rgb(33, 33, 33);
   cursor: default;
 }
@@ -97,4 +99,8 @@
 }
 .weather-forecast-temperatures-min{
   opacity: 0.6;
+}
+
+.active{
+  text-decoration: none;
 }

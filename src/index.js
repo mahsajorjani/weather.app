@@ -50,7 +50,7 @@ currenetdateTime.innerHTML = formatDate(currentTime);
 
 function formatDay(timestamp){
   let date = new Date(timestamp * 1000);
-  let currentDay = date.getDate();
+  let currentDay = date.getDay();
   let days = [ "Sun" , "Mon" , "Tue" , " Wed" , "Thu" , "Fri" , "Sat" ];
   return days[currentDay];
 
@@ -62,8 +62,8 @@ let forecast = response.data.daily;
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class=" row">`;
-forecast.forEach(function(forecastDay){
-
+forecast.forEach(function(forecastDay , index){
+if(index <6){
       forecastHTML = forecastHTML +
 `
         <div class="col-2">
@@ -79,6 +79,7 @@ forecast.forEach(function(forecastDay){
           <span class="weather-forecast-temperatures-min">${Math.round(forecastDay.temp.min)}°</span> 
         </div>
       </div>`;
+}
 });
 forecastHTML = forecastHTML+ `</div>`;
 forecastElement.innerHTML = forecastHTML;
