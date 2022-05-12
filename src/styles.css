@@ -11,6 +11,7 @@
   .card-text {
     font-size: 20px;
   }
+
   body {
     
     font-family: sans-serif;
@@ -44,14 +45,21 @@
   li{
     list-style-type: none;
     margin: 0;
+    opacity: 0.6;
+  }
+  #humidity{
+    color:red;
+  }
+  #wind{
+   color: red ;
   }
 .opens{
- text-align: center;
- margin: 0;
- position: fixed;
- left: 170px;
-
- 
+   padding-top: 30px;
+   padding-left: 90px;
+   padding-right: 45px;
+   font-style: normal;
+   font-size: small;
+   color: rgb(99, 96, 96);
 }
 .weather-temp img{
   margin-right: 5px;
@@ -100,4 +108,35 @@
 
 .active{
   text-decoration: none;
+}
+#mahsa{
+  color: rgb(224, 108, 108);
+}
+#source{
+  color: rgb(224, 108, 108);
+}
+#netlify{
+  color: rgb(224, 108, 108);
+}
+.weather-forecast-date{
+  text-align: center;
+  margin: 10px 0;
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 10px;
+}
+.weather-forecast-temperatures{
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #f65282;
+  font-weight: bold;
+}
+.weather-forecast-temperatures-min{
+  margin-left: 10px;
+  opacity: 0.6;
+}
+#description{
+  font-size: larger;
+  font-weight: bold;
+  opacity: 0.4;
 }
