@@ -3,7 +3,7 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px 40px;
-    border-radius: 10px;
+    border-radius: 40px;
     padding: 20px;
 
   }
@@ -11,11 +11,10 @@
   .card-text {
     font-size: 20px;
   }
-
-  body {
-    
-    font-family: sans-serif;
+  .weather-app-center{
+    padding: 0;
   }
+ 
   .col-4 {
     font-family: sans-serif;
     font-size: 16px;
@@ -119,6 +118,7 @@
   color: rgb(224, 108, 108);
 }
 .weather-forecast-date{
+  color: black;
   text-align: center;
   margin: 10px 0;
   border-bottom: 1px solid #f9f7fe;
